@@ -6,12 +6,12 @@ Versions are fixed and solution is working in Docker as well:
 
 ```terminal
  docker-compose build dev
- docker-compose up --build
+ docker-compose up --build // OR // docker-compose up --build dev
 ```
 
 ## Start it normally
 
 ```terminal
 npm i
-npm run start _or_ yarn start
+npm run start // OR // yarn start
 ```
