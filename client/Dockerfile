@@ -1,4 +1,4 @@
-FROM node:12.18.3
+FROM node:14
 LABEL version="1.0"
 LABEL description="Falcon Home Assignment - Dockerfile for client"
 LABEL maintainer = ["aprobalint@protonmail.com"]
