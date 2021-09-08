@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400|Overpass+Mono:wght@300;400&display=swap&subset=latin-ext");
+
+$font-mono: "Overpass", monospace, serif;
+$font-default: "Open Sans", Arial, Helvetica, sans-serif;
+
+$smooth-def: all ease-in-out 0.25s;
+
+$green: #52d890;
+$blue: #009dff;
+$blue-dark: #004f80;
+
+$grey-blue: #edf2f5;
+
+$white: #ffffff;
+$grey-050: #f4f4f4;
+$grey-100: #ebebeb;
+$grey-200: #cccccc;
+$grey-300: #b2b2b2;
+$grey-400: #999999;
+$grey-500: #7f7f7f;
+$grey-600: #666666;
+$grey-700: #4a4d4e;
+$grey-800: #333333;
+$grey-900: #191919;
+$black: #000000;
+
+$border-white: 1px solid $white;
+$border-rad: 0.3rem;
+$border-rad-sm: 0.375rem;
+
+$smooth: all 0.15s ease 0s;
+$smooth-longer: all 0.5s ease 0s;
+
+$morph-shadow: -12px -12px 20px rgba(255, 255, 255, 0.8),
+  10px 10px 24px rgba(166, 180, 200, 0.7);
+
+$morph-shadow-hover: inset -1px -1px 0px rgba(206, 206, 206, 0),
+  inset 0 0 14px 3px rgb(211, 218, 226);
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-default;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2rem;
+  color: $black;
+}
+
+p,
+span,
+li {
+  font-family: $font-default;
+  color: $black;
+}
+
+span {
+  &.credit {
+    font-weight: 300;
+    font-size: 0.75rem;
+    padding: 1rem 0 0.375rem;
+    display: block;
+  }
+}
+
+.logo {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.container {
+  width: 30rem;
+  max-width: 100%;
+  padding: 1rem;
+  margin: 2rem auto;
+  background-color: $grey-100;
+  border-radius: $border-rad;
+}

@@ -15,3 +15,7 @@ Versions are fixed and solution is working in Docker as well:
 npm i
 npm run start // OR // yarn start
 ```
+
+## Notes
+
+- For development it's better to use Yarn or NPM as in docker the hot reload webpack feature is not working.

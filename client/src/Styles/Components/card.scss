@@ -1,0 +1,16 @@
+.card {
+  background-color: $white;
+  padding: 0.75rem;
+  border-radius: $border-rad-sm;
+  margin-bottom: 0.5rem;
+  &:hover {
+    transition: $smooth;
+    box-shadow: inset 4px 0 0 0 $blue;
+  }
+  p {
+    margin-top: 0;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

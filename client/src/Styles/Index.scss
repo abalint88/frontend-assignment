@@ -1,1 +1,6 @@
-@import "~normalize.css"
+@import "~normalize.css";
+@import "defaults";
+
+@import "./Components/add.scss";
+@import "./Components/card.scss";
+@import "./Components/list.scss"
