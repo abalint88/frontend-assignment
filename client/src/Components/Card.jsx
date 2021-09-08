@@ -1,9 +1,8 @@
-function Card() {
+function Card({ task, type }) {
     return (
-        <div className="card">
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum porro itaque temporibus vitae, obcaecati ad. Velit alias veniam necessitatibus repudiandae voluptatem rem tempora eos eveniet, omnis debitis delectus doloribus voluptate?
-            </p>
+        <div className={"card " + type}>
+            <h2>{task.title}</h2>
+            <p>{task.description}</p>
         </div>
     );
 }

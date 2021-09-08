@@ -1,8 +1,11 @@
-function Add() {
+function Add({handleAdd}) {
     return (
         <div className="add">
-            <input type="text" name="" id="" />
-            <button onClick={() => {console.log("clicked")}}>Add</button>
+            <form onSubmit={handleAdd}>
+                <input type="text" name="title" id="title" placeholder="Title" required />
+                <textarea name="description" id="description" placeholder="Description" required />
+                <button type="submit">Add</button>
+            </form>
         </div>
     );
 }

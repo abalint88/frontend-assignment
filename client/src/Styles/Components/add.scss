@@ -4,21 +4,29 @@
   padding: 0 0 1rem;
 }
 
-input {
+input,
+textarea {
   border-radius: $border-rad-sm;
   padding: 0.75rem;
   font-size: 1rem;
   font-family: $font-default;
   width: 100%;
+  max-width: 100%;
   display: block;
   border: none;
   box-sizing: border-box;
   transition: $smooth;
-  &:focus-visible, &:hover {
+  &:focus-visible,
+  &:hover {
     box-shadow: inset 4px 0 0 0 $blue;
     outline: none;
     outline-width: 0;
   }
+}
+
+textarea {
+  margin-top: 1rem;
+  min-height: 2.625rem;
 }
 
 button {
