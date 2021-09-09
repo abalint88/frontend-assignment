@@ -11,7 +11,6 @@ export async function apiPost(isLoading, formData) {
     isLoading(true);
     await axios.post(endpoint, formData)
     isLoading(false);
-
 }
 
 export async function apiDelete(isLoading, id) {

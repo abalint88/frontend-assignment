@@ -1,37 +1,31 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
-import Add from "./Components/Add";
-import List from "./Components/List";
 import logo from "./Images/falcon.svg"
 import { apiFetch, apiPost, apiDelete, apiUpdate } from "./Helpers/fetch"
 
+import Add from "./Components/Add";
+import List from "./Components/List";
+import Loader from "./Components/Loader";
+
+
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [tasks, setTasks] = useState(null);
+  const [isLoading, setLoading] = useState(false);
   const [edited, setEdited] = useState(null);
-  const form = useRef(null);
 
   const handleAdd = e => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
-
     let title = formData.get("title")
     let description = formData.get("description")
 
+    const payload = { title, description }
 
-    if(edited) {
-      apiUpdate(setLoading, edited.id, {
-        title,
-        description
-      })
+    if (edited) {
+      apiUpdate(setLoading, edited.id, payload)
       setEdited(null)
-    }
-    else {
-      apiPost(setLoading, {
-        title,
-        description
-      })
+    } else {
+      apiPost(setLoading, payload)
     }
     e.target.reset();
   };
@@ -45,7 +39,7 @@ function App() {
     return () => {
       setTasks()
     }
-  }, [loading])
+  }, [isLoading])
 
   return (
     <div className="container">
@@ -54,14 +48,16 @@ function App() {
       <Add
         handleAdd={handleAdd}
         edited={edited}
-        ref={form}
       />
-      <List
-        tasks={tasks}
-        handleDelete={apiDelete}
-        handleLoading={setLoading}
-        handleEdit={handleEdit}
-      />
+
+      {isLoading ?
+        <Loader /> :
+        <List
+          tasks={tasks}
+          handleDelete={apiDelete}
+          handleLoading={setLoading}
+          handleEdit={handleEdit}
+        />}
 
       <span className="credit">
         Falcon.io homework by Balint Apro

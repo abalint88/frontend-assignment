@@ -1,16 +1,18 @@
 function List({ tasks, handleDelete, handleEdit, handleLoading }) {
     const errorMessage = {
-        "title": "No tasks Found",
-        "description": ""
+        "title": "No tasks Found!",
+        "description": "Please add a new task using the form above."
     }
+
     return (
         <div className="list">
-            {(!tasks || tasks.lenght === 0) ? (
+            {(tasks && (tasks.length === 0 || tasks === []) ) ? (
                 <div className={"card error"}>
                     <h2>{errorMessage.title}</h2>
                     <p>{errorMessage.description}</p>
                 </div>
-            ) : tasks.map((task) => (
+            ) : (
+                tasks && tasks.map((task) => (
                 <div key={task.id} className="card">
                     <h2>{task.title}</h2>
                     <p>{task.description}</p>
@@ -18,7 +20,7 @@ function List({ tasks, handleDelete, handleEdit, handleLoading }) {
                         <span className="edit" onClick={() => { handleEdit(task) }}>✏</span>
                         <span className="delete" onClick={() => { handleDelete(handleLoading, task.id) }}>🗑</span>
                     </div>
-                </div>
+                </div>)
             ))}
         </div>
     );
