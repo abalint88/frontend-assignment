@@ -4,6 +4,13 @@ function List({ tasks, handleDelete, handleEdit, handleLoading }) {
         "description": "Please add a new task using the form above."
     }
 
+    const handleKeyDown = (event, fnToPass) => {
+        if (event === "keydown" && event.key === 'Enter') {
+            return fnToPass
+        }
+    }
+
+
     return (
         <div className="list">
             {(tasks && (tasks.length === 0 || tasks === [])) ? (
@@ -18,13 +25,13 @@ function List({ tasks, handleDelete, handleEdit, handleLoading }) {
                         <p>{task.description}</p>
                         <div className="sidepanel">
                             <span className="edit" role="button"
-                            tabIndex={0}
-                            onKeyDown={() => {if (Event.key === 'Enter') {handleEdit(task)}}}
-                            onClick={() => { handleEdit(task) }}>✏</span>
+                                tabIndex={0}
+                                onKeyDown={(e) => handleKeyDown(e, handleEdit(task))}
+                                onClick={() => { handleEdit(task) }}>✏</span>
                             <span className="delete" role="button"
-                            tabIndex={0}
-                            onKeyDown={() => {if (Event.key === 'Enter') {handleDelete(handleLoading, task.id )}}}
-                            onClick={() => { handleDelete(handleLoading, task.id) }}>🗑</span>
+                                tabIndex={0}
+                                onKeyDown={(e) => handleKeyDown(e, handleDelete(handleLoading, task.id))}
+                                onClick={() => { handleDelete(handleLoading, task.id) }}>🗑</span>
                         </div>
                     </div>)
                 ))}

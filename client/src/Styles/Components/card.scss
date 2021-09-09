@@ -23,7 +23,7 @@
     font-weight: 600;
   }
 
-  &:hover {
+  &:hover, &:focus, &:focus-visible, &:focus-within {
     transition: $smooth;
     box-shadow: inset 4px 0 0 0 $blue;
     padding-right: 50px;
