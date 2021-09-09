@@ -4,8 +4,6 @@ function List({ tasks, handleDelete, handleEdit, handleComplete, handleLoading }
         "description": "Please add a new task using the form above."
     }
 
-
-
     const handleKeyDown = (event, fnToPass) => {
         if (event === "keydown" && event.key === 'Enter') {
             return fnToPass

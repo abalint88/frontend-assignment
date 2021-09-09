@@ -23,7 +23,10 @@
     font-weight: 600;
   }
 
-  &:hover, &:focus, &:focus-visible, &:focus-within {
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
     transition: $smooth;
     box-shadow: inset 4px 0 0 0 $blue;
     padding-right: 50px;
@@ -36,7 +39,6 @@
   }
   &.completed {
     box-shadow: inset 4px 0 0 0 $green;
-
   }
   form {
     height: 0;
@@ -48,7 +50,7 @@
 .sidepanel {
   position: absolute;
   top: 0;
-  padding: $padding-sm;
+  padding: 0.275rem $padding-sm;
   right: -5rem;
   transition: $smooth-all;
   span {
