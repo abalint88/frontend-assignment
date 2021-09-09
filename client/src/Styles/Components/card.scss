@@ -1,11 +1,16 @@
 .card {
   background-color: $white;
-  padding: 0.75rem;
+  padding: $padding-sm $padding-sm $padding-lg;
   border-radius: $border-rad-sm;
   margin-bottom: 0.5rem;
-  &:hover {
-    transition: $smooth;
-    box-shadow: inset 4px 0 0 0 $blue;
+  overflow: hidden;
+  position: relative;
+  transition: $smooth-all;
+
+  h2,
+  p {
+    width: 100%;
+    opacity: 1;
   }
   p {
     margin-top: 0;
@@ -17,7 +22,43 @@
     font-size: 1rem;
     font-weight: 600;
   }
+
+  &:hover {
+    transition: $smooth;
+    box-shadow: inset 4px 0 0 0 $blue;
+    padding-right: 50px;
+    .sidepanel {
+      right: 0;
+    }
+  }
   &.error {
     box-shadow: inset 4px 0 0 0 $red;
+  }
+  form {
+    height: 0;
+    overflow: hidden;
+    transition: $smooth-all;
+  }
+}
+
+.sidepanel {
+  position: absolute;
+  top: 0;
+  padding: $padding-sm;
+  right: -5rem;
+  transition: $smooth-all;
+  span {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: $smooth-color;
+    &.edit {
+      font-size: 2rem;
+      transform: rotate(135deg);
+    }
+    &:hover {
+      color: $blue-dark;
+      cursor: pointer;
+    }
   }
 }

@@ -1,16 +1,25 @@
-import Card from "./Card";
-
-function List({ tasks }) {
+function List({ tasks, handleDelete, handleEdit, handleLoading }) {
     const errorMessage = {
         "title": "No tasks Found",
         "description": ""
     }
-
     return (
         <div className="list">
-            {(tasks && tasks !== []) ? tasks.map((task) =>
-                <Card task={task} key={task.id}/>
-            ) : <Card task={errorMessage} type="error" />}
+            {(!tasks || tasks.lenght === 0) ? (
+                <div className={"card error"}>
+                    <h2>{errorMessage.title}</h2>
+                    <p>{errorMessage.description}</p>
+                </div>
+            ) : tasks.map((task) => (
+                <div key={task.id} className="card">
+                    <h2>{task.title}</h2>
+                    <p>{task.description}</p>
+                    <div className="sidepanel">
+                        <span className="edit" onClick={() => { handleEdit(task) }}>✏</span>
+                        <span className="delete" onClick={() => { handleDelete(handleLoading, task.id) }}>🗑</span>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 }
