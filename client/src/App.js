@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import logo from "./Images/falcon.svg"
-import { apiFetch, apiPost, apiDelete, apiUpdate } from "./Helpers/fetch"
+import { apiFetch, apiPost, apiDelete, apiUpdate, apiComplete } from "./Helpers/Api"
 
 import Add from "./Components/Add";
 import List from "./Components/List";
 import Loader from "./Components/Loader";
-
 
 function App() {
   const [tasks, setTasks] = useState(null);
@@ -34,6 +33,10 @@ function App() {
     setEdited(selectedTask)
   }
 
+  const handleComplete = (selectedTask, payload) => {
+    apiComplete(setLoading, selectedTask, payload);
+  }
+
   useEffect(() => {
     apiFetch(setTasks);
     return () => {
@@ -57,6 +60,7 @@ function App() {
           handleDelete={apiDelete}
           handleLoading={setLoading}
           handleEdit={handleEdit}
+          handleComplete={handleComplete}
         />}
 
       <span className="credit">

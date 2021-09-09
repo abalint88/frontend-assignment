@@ -24,3 +24,10 @@ export async function apiUpdate(isLoading, id, formData) {
     await axios.patch(`${endpoint}/${id}`, formData)
     isLoading(false);
 }
+
+export async function apiComplete(isLoading, id, taskPayload) {
+    const newTaskPayload = { ...taskPayload, "complete": true }
+    isLoading(true);
+    await axios.patch(`${endpoint}/${id}`, newTaskPayload)
+    isLoading(false);
+}
