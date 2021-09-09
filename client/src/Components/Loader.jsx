@@ -1,6 +1,6 @@
 function Loader() {
     return (
-        <div className="loader">
+        <div id="loader" className="loader">
             <div></div>
             <div></div>
             <div></div>
@@ -9,6 +9,3 @@ function Loader() {
 }
 
 export default Loader;
-
-
-
