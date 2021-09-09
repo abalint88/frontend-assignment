@@ -27,6 +27,7 @@
 npm i
 npm run start
 # OR
+yarn install
 yarn start
 ```
 
@@ -58,7 +59,7 @@ VS Code
 
 #### VS Code Plugins
 
-These I consider useful, probably zou know all of these already
+These I consider useful, probably you know all of these already
 
 * Git Graph and Lens - For visual aid
 * Import Cost - Extremely useful
