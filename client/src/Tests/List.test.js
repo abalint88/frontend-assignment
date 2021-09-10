@@ -18,12 +18,6 @@ test("List - displays no connection, when server is not running", () => {
     expect(screen.queryByText(errorNetwork.title)).toBeInTheDocument()
 });
 
-test("List - displays 1 complete task, when tasks are loaded", () => {
-    render(<List tasks={toDoList} />);
-    let btnComplete = screen.queryAllByTitle("Complete");
-    expect(btnComplete.length).toEqual(1);
-});
-
 test("List - displays 3 Delete and Edit", () => {
     render(<List tasks={toDoList} />);
 

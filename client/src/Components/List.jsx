@@ -35,8 +35,7 @@ function List({ tasks, handleDelete, handleEdit, handleComplete, handleLoading, 
                     tasks && tasks.map((task) => (
                         <div key={task.id}
                             className={`card ${task.complete ? "completed" : ""}`}
-                            title={task.title}
-                            aria-label={task.title}>
+                            title={task.title}>
                             <h2 title={task && task.complete ? "Complete" : "Not Complete"}>{task.title}</h2>
                             <p>{task.description}</p>
                             <div className="sidepanel">
@@ -60,7 +59,7 @@ function List({ tasks, handleDelete, handleEdit, handleComplete, handleLoading, 
                                     className="delete"
                                     role="button"
                                     title="Delete"
-                                    ria-label="delete"
+                                    aria-label="delete"
                                     tabIndex={0}
                                     onKeyDown={(e) => handleKeyDown(e, handleDelete(handleLoading, task.id))}
                                     onClick={() => { handleDelete(handleLoading, task.id) }}>🗑</span>
