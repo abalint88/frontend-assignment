@@ -9,6 +9,7 @@ function Add({ handleAdd, edited }) {
                     id="title"
                     placeholder="Title"
                     title="Add title here"
+                    aria-label="Add title here"
                     defaultValue={edited ? edited.title : ""}
                     required />
                 <textarea
@@ -16,6 +17,7 @@ function Add({ handleAdd, edited }) {
                     id="description"
                     placeholder="Description"
                     title="Add description here"
+                    aria-label="Add description here"
                     defaultValue={edited ? edited.description : ""} />
                 <button title="Submit button" type="submit">{edited ? "Modify" : "Add"}</button>
             </form>
