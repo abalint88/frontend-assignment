@@ -6,11 +6,13 @@
   overflow: hidden;
   position: relative;
   transition: $smooth-all;
+  min-height: 6rem;
 
   h2,
   p {
     width: 100%;
     opacity: 1;
+    word-wrap: break-word;
   }
   p {
     margin-top: 0;
