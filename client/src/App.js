@@ -11,6 +11,7 @@ function App() {
   const [tasks, setTasks] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const [edited, setEdited] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleAdd = e => {
     e.preventDefault();
@@ -38,7 +39,7 @@ function App() {
   }
 
   useEffect(() => {
-    apiFetch(setTasks);
+    apiFetch(setTasks, setError);
     return () => {
       setTasks()
     }
@@ -61,6 +62,7 @@ function App() {
           handleLoading={setLoading}
           handleEdit={handleEdit}
           handleComplete={handleComplete}
+          handleError={error}
         />}
 
       <span className="credit">

@@ -2,9 +2,16 @@ import axios from "axios";
 
 const endpoint = "http://localhost:1337/tasks";
 
-export async function apiFetch(setter) {
-    let apiResponse = await axios.get(endpoint);
-    setter(apiResponse.data)
+export async function apiFetch(setter, setError) {
+    try {
+        let apiResponse = await axios.get(endpoint);
+        if (apiResponse.data) {
+            setter(apiResponse.data)
+        }
+    }
+    catch (error) {
+        setError(error)
+    }
 }
 
 export async function apiPost(isLoading, formData) {
