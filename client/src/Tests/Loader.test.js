@@ -4,6 +4,8 @@ import renderer from 'react-test-renderer';
 
 import Loader from "../Components/Loader";
 
+// Testing testing setup
+
 test("Loader - should be rendered", () => {
     const component = renderer.create(
         <Loader />,
